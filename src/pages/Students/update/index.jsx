@@ -1,11 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Form, Field } from "react-final-form";
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { CreateStyle } from '../create/createStyle';
 const Create = () => {
-
+  const navigate = useNavigate()
   const [data, setData] = useState({})
   let { id } = useParams()
   useEffect(() => {
@@ -25,11 +25,13 @@ const Create = () => {
         console.log(res.data)
         const { success } = res.data.data
         console.log(success)
-        // if (success) {
-        //   toast.success("successfully")
-        // } else {
-        //   toast.error("error")
-        // }
+        if (success) {
+          navigate('/students')
+          toast.success("successfully")
+        } else {
+          // toast.error("error")
+          navigate('/students')
+        }
       })
   }
   return (
