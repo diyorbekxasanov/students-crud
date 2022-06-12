@@ -48,11 +48,11 @@ const Registr = () => {
   };
   const user = localStorage.getItem("user")
   const token = localStorage.getItem("token")
-  // useEffect(() => {
-  //   if (user && token) {
-  //     navigate('/students')
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (user && token) {
+      navigate('/students')
+    }
+  }, [])
   return (
     <StyleForm>
       {
