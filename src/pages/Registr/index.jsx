@@ -38,6 +38,7 @@ const Registr = () => {
         console.log(success)
         if (success) {
           toast.success("successfully")
+          setLog("login")
         } else {
           toast.error("error")
         }
