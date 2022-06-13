@@ -12,6 +12,7 @@ const Create = () => {
       ...values, organizationId: 0
     })
       .then(res => {
+        console.log(res.data)
         const {success} = res.data.data
         if (success) {
           toast.success("successfully")

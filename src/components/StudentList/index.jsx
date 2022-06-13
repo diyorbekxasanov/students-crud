@@ -22,6 +22,7 @@ const StudentList = () => {
       axios.post('https://online-excel-heroku.herokuapp.com/student/list')
          .then(res => {
             const data = res.data.data.data
+            console.log(data)
             // newArr=_.chunk(Math.ceil(newArr, 5))
             setData(data || [])
 
